@@ -22,7 +22,6 @@ project "GLFW"
   }
 
   filter "system:windows"
-    buildoptions {"-std=c20","-lgdi32"}
     systemversion "latest"
     staticruntime "on"
 
@@ -43,5 +42,13 @@ project "GLFW"
         "_GLFW_WIN32",
         "_CRT_SECURE_NO_WARNINGS"
     }
-  filter {"system:windows","configurations:Release"}
-    buildoptions "/MT"
+  
+  filter "configurations:Debug"
+    defines "BL_DEBUG"
+    symbols "on"
+    runtime "Debug"
+  
+  filter "configurations:Release"
+    defines "BL_RELEASE"
+    optimize "on"
+    runtime "Release"
