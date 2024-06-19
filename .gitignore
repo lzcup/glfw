@@ -20,8 +20,6 @@ RelWithDebInfo
 *.opensdf
 
 # Xcode clutter
-GLFW.build
-GLFW.xcodeproj
 
 # macOS clutter
 .DS_Store
